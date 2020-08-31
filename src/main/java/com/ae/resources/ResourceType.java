@@ -22,5 +22,6 @@ public enum ResourceType {
     ST_ARMOR,
     ST_WEAPONS,
     ST_POTIONS,
-    ST_SCROLLS
+    ST_SCROLLS,
+    ST_FACTIONS
 }

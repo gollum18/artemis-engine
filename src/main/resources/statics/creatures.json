@@ -1,6 +1,13 @@
 [
   {
     "id": 0,
-    "name": ""
+    "name": "",
+    "drop-table": [
+      {
+        "id": 0,
+        "category": "",
+        "chance": 0.0
+      }
+    ]
   }
 ]

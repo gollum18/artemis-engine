@@ -1,6 +1,17 @@
 [
   {
     "id": 0,
-    "name": ""
+    "faction": 0,
+    "combat-type": "",
+    "progression-type": "",
+    "name": "",
+    "description": "",
+    "drop-table": [
+      {
+        "id": 0,
+        "category": "",
+        "chance": 0.0
+      }
+    ]
   }
 ]

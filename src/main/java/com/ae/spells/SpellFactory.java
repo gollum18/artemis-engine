@@ -2,7 +2,7 @@ package com.ae.spells;
 
 import com.ae.resources.ResourceLoader;
 import com.ae.resources.ResourceType;
-import com.ae.util.FlyweightIterator;
+import com.ae.util.flyweights.FlyweightIterator;
 import org.json.JSONArray;
 import org.json.JSONObject;
 

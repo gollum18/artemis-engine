@@ -63,6 +63,8 @@ public class ResourceLoader {
                 case ST_SCROLLS:
                     filepath = loader.getResource(ResourcePaths.ST_SCROLLS_PATH).getFile();
                     break;
+                case ST_FACTIONS:
+                    filepath = loader.getResource(ResourcePaths.ST_FACTIONS_PATH).getFile();
             }
         } catch (ClassNotFoundException | NullPointerException ex) {
             ex.printStackTrace(System.err);

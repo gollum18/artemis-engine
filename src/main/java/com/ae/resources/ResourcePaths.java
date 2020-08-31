@@ -19,4 +19,5 @@ public class ResourcePaths {
     public static final String ST_NPCS_PATH = "statics/npcs.json";
     public static final String ST_POTIONS_PATH = "statics/potions.json";
     public static final String ST_SCROLLS_PATH = "statics/scrolls.json";
+    public static final String ST_FACTIONS_PATH = "statics/factions.json";
 }

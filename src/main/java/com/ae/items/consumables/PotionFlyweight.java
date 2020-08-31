@@ -1,6 +1,7 @@
 package com.ae.items.consumables;
 
-import com.ae.util.Flyweight;
+import com.ae.resources.ResourceDataKeys;
+import com.ae.util.flyweights.Flyweight;
 import org.json.JSONObject;
 
 public class PotionFlyweight extends Flyweight {
@@ -8,8 +9,8 @@ public class PotionFlyweight extends Flyweight {
     private final String sName;
 
     public PotionFlyweight(JSONObject potionData) {
-        dId = potionData.getInt(PotionDataKeys.POTION_ID);
-        sName = potionData.getString(PotionDataKeys.POTION_NAME);
+        dId = potionData.getInt(ResourceDataKeys.KEY_ID);
+        sName = potionData.getString(ResourceDataKeys.KEY_NAME);
     }
 
     public int getId() { return dId; }

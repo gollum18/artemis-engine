@@ -1,6 +1,7 @@
 package com.ae.actors.creatures;
 
-import com.ae.util.Flyweight;
+import com.ae.resources.ResourceDataKeys;
+import com.ae.util.flyweights.Flyweight;
 import org.json.JSONObject;
 
 public class CreatureFlyweight extends Flyweight {
@@ -8,8 +9,8 @@ public class CreatureFlyweight extends Flyweight {
     private final String sName;
 
     public CreatureFlyweight(JSONObject creatureData) {
-        dId = creatureData.getInt(CreatureDataKeys.CREATURE_ID);
-        sName = creatureData.getString(CreatureDataKeys.CREATURE_NAME);
+        dId = creatureData.getInt(ResourceDataKeys.KEY_ID);
+        sName = creatureData.getString(ResourceDataKeys.KEY_NAME);
     }
 
     public int getId() { return dId; }

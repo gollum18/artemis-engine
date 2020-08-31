@@ -1,7 +1,8 @@
 package com.ae.items.weapons;
 
 import com.ae.items.ItemRarity;
-import com.ae.util.Flyweight;
+import com.ae.resources.ResourceDataKeys;
+import com.ae.util.flyweights.Flyweight;
 import org.json.JSONObject;
 
 /**
@@ -36,28 +37,28 @@ public class WeaponFlyweight extends Flyweight {
      * @param weaponData
      */
     public WeaponFlyweight(JSONObject weaponData) {
-        dId = weaponData.getInt(WeaponDataKeys.WEAPON_ID);
-        sName = weaponData.getString(WeaponDataKeys.WEAPON_NAME);
-        mWeaponSlot = WeaponSlot.valueOf(weaponData.getString(WeaponDataKeys.WEAPON_WEAPON_SLOT));
-        mRarity = ItemRarity.valueOf(weaponData.getString(WeaponDataKeys.WEAPON_RARITY));
-        dDamage = weaponData.getInt(WeaponDataKeys.WEAPON_DAMAGE);
-        dWeight = weaponData.getInt(WeaponDataKeys.WEAPON_WEIGHT);
-        dDurability = weaponData.getInt(WeaponDataKeys.WEAPON_DURABILITY);
-        dBleedBuildup = weaponData.getInt(WeaponDataKeys.WEAPON_BLEED_BUILDUP);
-        dPoisonBuildup = weaponData.getInt(WeaponDataKeys.WEAPON_POISON_BUILDUP);
-        dStunBuildup = weaponData.getInt(WeaponDataKeys.WEAPON_STUN_BUILDUP);
-        dMagicDamage = weaponData.getInt(WeaponDataKeys.WEAPON_MAGIC_DAMAGE);
-        dFireDamage = weaponData.getInt(WeaponDataKeys.WEAPON_FIRE_DAMAGE);
-        dNecroDamage = weaponData.getInt(WeaponDataKeys.WEAPON_NECRO_DAMAGE);
-        dStrengthRequired = weaponData.getInt(WeaponDataKeys.WEAPON_STRENGTH_REQUIRED);
-        dDexterityRequired = weaponData.getInt(WeaponDataKeys.WEAPON_DEXTERITY_REQUIRED);
-        dIntelligenceRequired = weaponData.getInt(WeaponDataKeys.WEAPON_INTELLIGENCE_REQUIRED);
-        dFaithRequired = weaponData.getInt(WeaponDataKeys.WEAPON_FAITH_REQUIRED);
-        fStrengthScaling = weaponData.getDouble(WeaponDataKeys.WEAPON_STRENGTH_SCALING);
-        fDexterityScaling = weaponData.getDouble(WeaponDataKeys.WEAPON_DEXTERITY_SCALING);
-        fIntelligenceScaling = weaponData.getDouble(WeaponDataKeys.WEAPON_INTELLIGENCE_SCALING);
-        fFaithScaling = weaponData.getDouble(WeaponDataKeys.WEAPON_FAITH_SCALING);
-        sDescription = weaponData.getString(WeaponDataKeys.WEAPON_DESCRIPTION);
+        dId = weaponData.getInt(ResourceDataKeys.KEY_ID);
+        sName = weaponData.getString(ResourceDataKeys.KEY_NAME);
+        mWeaponSlot = WeaponSlot.valueOf(weaponData.getString(ResourceDataKeys.KEY_SLOT));
+        mRarity = ItemRarity.valueOf(weaponData.getString(ResourceDataKeys.KEY_RARITY));
+        dDamage = weaponData.getInt(ResourceDataKeys.KEY_DAMAGE);
+        dWeight = weaponData.getInt(ResourceDataKeys.KEY_WEIGHT);
+        dDurability = weaponData.getInt(ResourceDataKeys.KEY_DURABILITY);
+        dBleedBuildup = weaponData.getInt(ResourceDataKeys.KEY_BLEED_BUILDUP);
+        dPoisonBuildup = weaponData.getInt(ResourceDataKeys.KEY_POISON_BUILDUP);
+        dStunBuildup = weaponData.getInt(ResourceDataKeys.KEY_STUN_BUILDUP);
+        dMagicDamage = weaponData.getInt(ResourceDataKeys.KEY_MAGIC_DAMAGE);
+        dFireDamage = weaponData.getInt(ResourceDataKeys.KEY_FIRE_DAMAGE);
+        dNecroDamage = weaponData.getInt(ResourceDataKeys.KEY_NECRO_DAMAGE);
+        dStrengthRequired = weaponData.getInt(ResourceDataKeys.KEY_STRENGTH_REQUIREMENT);
+        dDexterityRequired = weaponData.getInt(ResourceDataKeys.KEY_DEXTERITY_REQUIREMENT);
+        dIntelligenceRequired = weaponData.getInt(ResourceDataKeys.KEY_INTELLIGENCE_REQUIREMENT);
+        dFaithRequired = weaponData.getInt(ResourceDataKeys.KEY_FAITH_REQUIRED);
+        fStrengthScaling = weaponData.getDouble(ResourceDataKeys.KEY_STRENGTH_SCALING);
+        fDexterityScaling = weaponData.getDouble(ResourceDataKeys.KEY_DEXTERITY_SCALING);
+        fIntelligenceScaling = weaponData.getDouble(ResourceDataKeys.KEY_INTELLIGENCE_SCALING);
+        fFaithScaling = weaponData.getDouble(ResourceDataKeys.KEY_FAITH_SCALING);
+        sDescription = weaponData.getString(ResourceDataKeys.KEY_DESCRIPTION);
     }
 
     /**

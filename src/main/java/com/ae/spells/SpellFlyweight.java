@@ -1,6 +1,7 @@
 package com.ae.spells;
 
-import com.ae.util.Flyweight;
+import com.ae.resources.ResourceDataKeys;
+import com.ae.util.flyweights.Flyweight;
 import org.json.JSONObject;
 
 import java.util.HashSet;
@@ -41,22 +42,22 @@ public class SpellFlyweight extends Flyweight {
                 "Error: Cannot instantiate SpellFlyweight. Spell data container is null."
             );
         }
-        dId = spellData.getInt(SpellDataKeys.KEY_ID);
-        sName = spellData.getString(SpellDataKeys.KEY_NAME);
-        mTarget = SpellTarget.valueOf(spellData.getString(SpellDataKeys.KEY_TARGET));
-        mType = SpellType.valueOf(spellData.getString(SpellDataKeys.KEY_TYPE));
-        dDuration = spellData.getInt(SpellDataKeys.KEY_DURATION);
-        dDamage = spellData.getInt(SpellDataKeys.KEY_DAMAGE);
-        dRange = spellData.getInt(SpellDataKeys.KEY_RANGE);
-        dFalloff = spellData.getInt(SpellDataKeys.KEY_FALLOFF);
-        dAreaOfEffect = spellData.getInt(SpellDataKeys.KEY_AOE);
-        dMaxCharges = spellData.getInt(SpellDataKeys.KEY_MAX_CHARGES);
-        dSlotsRequired = spellData.getInt(SpellDataKeys.KEY_SLOTS_REQUIRED);
-        dIntRequired = spellData.getInt(SpellDataKeys.KEY_INT_REQUIRED);
-        dFaithRequired = spellData.getInt(SpellDataKeys.KEY_FAITH_REQUIRED);
-        sDescription = spellData.getString(SpellDataKeys.KEY_DESCRIPTION);
+        dId = spellData.getInt(ResourceDataKeys.KEY_ID);
+        sName = spellData.getString(ResourceDataKeys.KEY_NAME);
+        mTarget = SpellTarget.valueOf(spellData.getString(ResourceDataKeys.KEY_TARGET));
+        mType = SpellType.valueOf(spellData.getString(ResourceDataKeys.KEY_TYPE));
+        dDuration = spellData.getInt(ResourceDataKeys.KEY_DURATION);
+        dDamage = spellData.getInt(ResourceDataKeys.KEY_DAMAGE);
+        dRange = spellData.getInt(ResourceDataKeys.KEY_RANGE);
+        dFalloff = spellData.getInt(ResourceDataKeys.KEY_FALLOFF);
+        dAreaOfEffect = spellData.getInt(ResourceDataKeys.KEY_AOE);
+        dMaxCharges = spellData.getInt(ResourceDataKeys.KEY_MAX_CHARGES);
+        dSlotsRequired = spellData.getInt(ResourceDataKeys.KEY_SLOTS_REQUIRED);
+        dIntRequired = spellData.getInt(ResourceDataKeys.KEY_INT_REQUIRED);
+        dFaithRequired = spellData.getInt(ResourceDataKeys.KEY_FAITH_REQUIRED);
+        sDescription = spellData.getString(ResourceDataKeys.KEY_DESCRIPTION);
         mEffects = new HashSet<>(4);
-        for (Object o : spellData.getJSONArray(SpellDataKeys.KEY_EFFECTS)) {
+        for (Object o : spellData.getJSONArray(ResourceDataKeys.KEY_EFFECTS)) {
             String effect = String.valueOf(o);
             mEffects.add(SpellEffect.valueOf(effect));
         }

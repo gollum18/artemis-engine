@@ -1,8 +1,9 @@
 package com.ae.items.weapons;
 
 import com.ae.items.ItemRarity;
+import com.ae.resources.ResourceDataKeys;
 import com.ae.spells.SpellType;
-import com.ae.util.Flyweight;
+import com.ae.util.flyweights.Flyweight;
 import org.json.JSONObject;
 
 /**
@@ -26,16 +27,16 @@ public class SpellbookFlyweight extends Flyweight {
      * @param spellbookData
      */
     public SpellbookFlyweight(JSONObject spellbookData) {
-        dId = spellbookData.getInt(SpellbookDataKeys.SPELLBOOK_ID);
-        mSpellType = SpellType.valueOf(SpellbookDataKeys.SPELLBOOK_TYPE);
-        mRarity = ItemRarity.valueOf(SpellbookDataKeys.SPELLBOOK_RARITY);
-        dSlots = spellbookData.getInt(SpellbookDataKeys.SPELLBOOK_SLOTS);
-        dMagicResist = spellbookData.getInt(SpellbookDataKeys.SPELLBOOK_MAGIC_RESIST);
-        dFireResist = spellbookData.getInt(SpellbookDataKeys.SPELLBOOK_FIRE_RESIST);
-        dNecroResist = spellbookData.getInt(SpellbookDataKeys.SPELLBOOK_NECRO_RESIST);
-        dIntRequirement = spellbookData.getInt(SpellbookDataKeys.SPELLBOOK_INTELLIGENCE_REQUIREMENT);
-        dFaithRequirement = spellbookData.getInt(SpellbookDataKeys.SPELLBOOK_FAITH_REQUIREMENT);
-        sDescription = spellbookData.getString(SpellbookDataKeys.SPELLBOOK_DESCRIPTION);
+        dId = spellbookData.getInt(ResourceDataKeys.KEY_ID);
+        mSpellType = SpellType.valueOf(ResourceDataKeys.KEY_TYPE);
+        mRarity = ItemRarity.valueOf(ResourceDataKeys.KEY_RARITY);
+        dSlots = spellbookData.getInt(ResourceDataKeys.KEY_SLOTS);
+        dMagicResist = spellbookData.getInt(ResourceDataKeys.KEY_MAGIC_RESIST);
+        dFireResist = spellbookData.getInt(ResourceDataKeys.KEY_FIRE_RESIST);
+        dNecroResist = spellbookData.getInt(ResourceDataKeys.KEY_NECRO_RESIST);
+        dIntRequirement = spellbookData.getInt(ResourceDataKeys.KEY_INTELLIGENCE_REQUIREMENT);
+        dFaithRequirement = spellbookData.getInt(ResourceDataKeys.KEY_FAITH_REQUIREMENT);
+        sDescription = spellbookData.getString(ResourceDataKeys.KEY_DESCRIPTION);
     }
 
     /**
