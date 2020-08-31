@@ -1,0 +1,22 @@
+[
+  {
+    "id": 0,
+    "name": "",
+    "armor-class": "",
+    "armor-slot": "",
+    "rarity": "",
+    "weight": 0,
+    "durability": 0,
+    "defense": 0,
+    "bleed-resist": 0,
+    "poison-resist": 0,
+    "stun-resist": 0,
+    "magic-resist":0,
+    "fire-resist": 0,
+    "necro-resist": 0,
+    "str-requirement": 0,
+    "dex-requirement": 0,
+    "int-requirement": 0,
+    "faith-requirement": 0
+  }
+]
