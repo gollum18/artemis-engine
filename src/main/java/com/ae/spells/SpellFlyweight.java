@@ -1,5 +1,6 @@
 package com.ae.spells;
 
+import com.ae.util.Flyweight;
 import org.json.JSONObject;
 
 import java.util.HashSet;
@@ -11,7 +12,7 @@ import java.util.Set;
  * @author Christen Ford
  * @since 08/29/2020
  */
-public class SpellFlyweight {
+public class SpellFlyweight extends Flyweight {
     private final int dId;
     private final String sName;
     private final Set<SpellEffect> mEffects;

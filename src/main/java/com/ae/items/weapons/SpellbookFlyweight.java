@@ -2,12 +2,13 @@ package com.ae.items.weapons;
 
 import com.ae.items.ItemRarity;
 import com.ae.spells.SpellType;
+import com.ae.util.Flyweight;
 import org.json.JSONObject;
 
 /**
  *
  */
-public class SpellbookFlyweight {
+public class SpellbookFlyweight extends Flyweight {
     private final WeaponSlot mWeaponSlot = WeaponSlot.OFF_HAND;
     private final int dId;
     private final SpellType mSpellType;

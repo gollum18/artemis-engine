@@ -1,8 +1,9 @@
 package com.ae.items.consumables;
 
+import com.ae.util.Flyweight;
 import org.json.JSONObject;
 
-public class PotionFlyweight {
+public class PotionFlyweight extends Flyweight {
     private final int dId;
     private final String sName;
 

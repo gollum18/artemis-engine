@@ -1,8 +1,9 @@
 package com.ae.actors.creatures;
 
+import com.ae.util.Flyweight;
 import org.json.JSONObject;
 
-public class CreatureFlyweight {
+public class CreatureFlyweight extends Flyweight {
     private final int dId;
     private final String sName;
 

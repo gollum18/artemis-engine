@@ -2,6 +2,7 @@ package com.ae.spells;
 
 import com.ae.resources.ResourceLoader;
 import com.ae.resources.ResourceType;
+import com.ae.util.FlyweightIterator;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -97,37 +98,6 @@ public class SpellFactory {
                 collection.add(fw);
             }
         }
-        return new SpellFlyweightIterator(collection);
+        return new FlyweightIterator<>(collection);
     }
-
-    /**
-     * Implements an iterator for iterating SpellFlyweight objects.
-     * @author Christen Ford
-     * @since 08/28/2020
-     */
-    private static class SpellFlyweightIterator implements Iterator<SpellFlyweight> {
-
-        private final List<SpellFlyweight> mList;
-        private int dIndex = 0;
-
-        /**
-         * Constructs a SpellFlyweightIterator from the items in <code>collection</code>.
-         * @param list A list containing elements for the iterator.
-         */
-        public SpellFlyweightIterator(List<SpellFlyweight> list) { mList = list; }
-
-        /**
-         * Determines whether the iterator has more items or not.
-         * @return <code>true</code> if the iterator can yield more items.
-         *         <code>false</code> otherwise.
-         */
-        @Override public boolean hasNext() { return dIndex != mList.size(); }
-
-        /**
-         * Returns the next SpellFlyweight in the iterator.
-         * @return The next flyweight in the iterator.
-         */
-        @Override public SpellFlyweight next() { return mList.get(dIndex++); }
-    }
-
 }

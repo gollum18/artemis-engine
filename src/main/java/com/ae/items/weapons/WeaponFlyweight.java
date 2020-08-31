@@ -1,12 +1,13 @@
 package com.ae.items.weapons;
 
 import com.ae.items.ItemRarity;
+import com.ae.util.Flyweight;
 import org.json.JSONObject;
 
 /**
  *
  */
-public class WeaponFlyweight {
+public class WeaponFlyweight extends Flyweight {
     private final int dId;
     private final String sName;
     private final WeaponSlot mWeaponSlot;

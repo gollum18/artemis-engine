@@ -2,13 +2,13 @@ package com.ae.items.weapons;
 
 import com.ae.resources.ResourceLoader;
 import com.ae.resources.ResourceType;
+import com.ae.util.FlyweightIterator;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
-import java.util.List;
 
 public class WeaponFactory {
     private static WeaponFactory mInstance;
@@ -47,17 +47,6 @@ public class WeaponFactory {
                 flyweights.add(fw);
             }
         }
-        return new WeaponFlyweightIterator(flyweights);
-    }
-
-    private static class WeaponFlyweightIterator implements Iterator<WeaponFlyweight> {
-        private final List<WeaponFlyweight> mList;
-        private int dIndex = 0;
-
-        public WeaponFlyweightIterator(List<WeaponFlyweight> list) { mList = list; }
-
-        @Override public boolean hasNext() { return dIndex != mList.size(); }
-
-        @Override public WeaponFlyweight next() { return mList.get(dIndex++); }
+        return new FlyweightIterator<>(flyweights);
     }
 }

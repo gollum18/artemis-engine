@@ -1,12 +1,13 @@
 package com.ae.items.armor;
 
 import com.ae.items.ItemRarity;
+import com.ae.util.Flyweight;
 import org.json.JSONObject;
 
 /**
  *
  */
-public class ArmorFlyweight {
+public class ArmorFlyweight extends Flyweight {
     private final int dId;
     private final String sName;
     private final ArmorClass mArmorClass;

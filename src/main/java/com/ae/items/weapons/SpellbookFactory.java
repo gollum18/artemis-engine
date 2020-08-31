@@ -6,8 +6,6 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
 
 /**
  *
@@ -56,32 +54,4 @@ public class SpellbookFactory {
         SpellbookFlyweight flyweight = mFlyweights.get(id);
         return new Spellbook(flyweight);
     }
-
-    /**
-     *
-     */
-    private static class SpellbookFlyweightIterator implements Iterator<SpellbookFlyweight> {
-
-        private final List<SpellbookFlyweight> mList;
-        private int dIndex = 0;
-
-        /**
-         *
-         * @param list
-         */
-        public SpellbookFlyweightIterator(List<SpellbookFlyweight> list) { mList = list; }
-
-        /**
-         *
-         * @return
-         */
-        @Override public boolean hasNext() { return dIndex != mList.size(); }
-
-        /**
-         *
-         * @return
-         */
-        @Override public SpellbookFlyweight next() { return mList.get(dIndex++); }
-    }
-
 }

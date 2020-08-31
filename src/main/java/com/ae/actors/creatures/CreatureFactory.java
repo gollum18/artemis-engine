@@ -6,8 +6,6 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
 
 public class CreatureFactory {
     private static CreatureFactory mInstance;
@@ -39,19 +37,5 @@ public class CreatureFactory {
         }
         CreatureFlyweight flyweight = mFlyweights.get(id);
         return new Creature(flyweight);
-    }
-
-    private static class CreatureFlyweightIterator implements Iterator<CreatureFlyweight> {
-        private final List<CreatureFlyweight> mList;
-        private int dIndex = 0;
-
-        public CreatureFlyweightIterator(List<CreatureFlyweight> list) {
-            mList = list;
-        }
-
-        @Override public boolean hasNext() { return dIndex == mList.size(); }
-
-        @Override
-        public CreatureFlyweight next() { return mList.get(dIndex++); }
     }
 }

@@ -1,8 +1,9 @@
 package com.ae.actors.humans;
 
+import com.ae.util.Flyweight;
 import org.json.JSONObject;
 
-public class NPCFlyweight {
+public class NPCFlyweight extends Flyweight {
     private final int dId;
     private final String sName;
 

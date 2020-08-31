@@ -6,8 +6,6 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
 
 public class ScrollFactory {
     private static ScrollFactory mInstance;
@@ -51,31 +49,5 @@ public class ScrollFactory {
         }
         ScrollFlyweight flyweight = mFlyweights.get(id);
         return new Scroll(flyweight);
-    }
-
-    /**
-     *
-     */
-    private static class ScrollFlyweightIterator implements Iterator<ScrollFlyweight> {
-        private final List<ScrollFlyweight> mList;
-        int dIndex = 0;
-
-        /**
-         *
-         * @param list
-         */
-        public ScrollFlyweightIterator(List<ScrollFlyweight> list) { mList = list; }
-
-        /**
-         *
-         * @return
-         */
-        @Override public boolean hasNext() { return dIndex != mList.size(); }
-
-        /**
-         *
-         * @return
-         */
-        @Override public ScrollFlyweight next() { return mList.get(dIndex++); }
     }
 }

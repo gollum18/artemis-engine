@@ -2,6 +2,7 @@ package com.ae.items.armor;
 
 import com.ae.resources.ResourceLoader;
 import com.ae.resources.ResourceType;
+import com.ae.util.FlyweightIterator;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -78,7 +79,7 @@ public class ArmorFactory {
                 collection.add(fw);
             }
         }
-        return new ArmorFlyweightIterator(collection);
+        return new FlyweightIterator<>(collection);
     }
 
     public Iterator<ArmorFlyweight> getFlyweightsBySlot(ArmorSlot slot) {
@@ -88,34 +89,7 @@ public class ArmorFactory {
                 collection.add(fw);
             }
         }
-        return new ArmorFlyweightIterator(collection);
-    }
-
-    /**
-     *
-     */
-    private static class ArmorFlyweightIterator implements Iterator<ArmorFlyweight> {
-
-        private final List<ArmorFlyweight> mList;
-        private int dIndex = 0;
-
-        /**
-         *
-         * @param list
-         */
-        public ArmorFlyweightIterator(List<ArmorFlyweight> list) { mList = list; }
-
-        /**
-         *
-         * @return
-         */
-        @Override public boolean hasNext() { return dIndex != mList.size(); }
-
-        /**
-         *
-         * @return
-         */
-        @Override public ArmorFlyweight next() { return mList.get(dIndex++); }
+        return new FlyweightIterator<>(collection);
     }
 
 }
