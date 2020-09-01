@@ -52,9 +52,9 @@ public class ArmorFlyweight extends Flyweight {
         dMagicResist = armorData.getInt(ResourceDataKeys.KEY_MAGIC_RESIST);
         dFireResist = armorData.getInt(ResourceDataKeys.KEY_FIRE_RESIST);
         dNecroResist = armorData.getInt(ResourceDataKeys.KEY_NECRO_RESIST);
-        dStrengthRequirement = armorData.getInt(ResourceDataKeys.KEY_STRENGTH_REQUIREMENT);
-        dDexterityRequirement = armorData.getInt(ResourceDataKeys.KEY_DEXTERITY_REQUIREMENT);
-        dIntelligenceRequirement = armorData.getInt(ResourceDataKeys.KEY_INTELLIGENCE_REQUIREMENT);
+        dStrengthRequirement = armorData.getInt(ResourceDataKeys.KEY_STR_REQUIREMENT);
+        dDexterityRequirement = armorData.getInt(ResourceDataKeys.KEY_DEX_REQUIREMENT);
+        dIntelligenceRequirement = armorData.getInt(ResourceDataKeys.KEY_INT_REQUIREMENT);
         dFaithRequirement = armorData.getInt(ResourceDataKeys.KEY_FAITH_REQUIREMENT);
     }
 

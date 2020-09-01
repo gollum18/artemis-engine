@@ -34,7 +34,7 @@ public class SpellbookFlyweight extends Flyweight {
         dMagicResist = spellbookData.getInt(ResourceDataKeys.KEY_MAGIC_RESIST);
         dFireResist = spellbookData.getInt(ResourceDataKeys.KEY_FIRE_RESIST);
         dNecroResist = spellbookData.getInt(ResourceDataKeys.KEY_NECRO_RESIST);
-        dIntRequirement = spellbookData.getInt(ResourceDataKeys.KEY_INTELLIGENCE_REQUIREMENT);
+        dIntRequirement = spellbookData.getInt(ResourceDataKeys.KEY_INT_REQUIREMENT);
         dFaithRequirement = spellbookData.getInt(ResourceDataKeys.KEY_FAITH_REQUIREMENT);
         sDescription = spellbookData.getString(ResourceDataKeys.KEY_DESCRIPTION);
     }

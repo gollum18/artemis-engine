@@ -50,10 +50,10 @@ public class WeaponFlyweight extends Flyweight {
         dMagicDamage = weaponData.getInt(ResourceDataKeys.KEY_MAGIC_DAMAGE);
         dFireDamage = weaponData.getInt(ResourceDataKeys.KEY_FIRE_DAMAGE);
         dNecroDamage = weaponData.getInt(ResourceDataKeys.KEY_NECRO_DAMAGE);
-        dStrengthRequired = weaponData.getInt(ResourceDataKeys.KEY_STRENGTH_REQUIREMENT);
-        dDexterityRequired = weaponData.getInt(ResourceDataKeys.KEY_DEXTERITY_REQUIREMENT);
-        dIntelligenceRequired = weaponData.getInt(ResourceDataKeys.KEY_INTELLIGENCE_REQUIREMENT);
-        dFaithRequired = weaponData.getInt(ResourceDataKeys.KEY_FAITH_REQUIRED);
+        dStrengthRequired = weaponData.getInt(ResourceDataKeys.KEY_STR_REQUIREMENT);
+        dDexterityRequired = weaponData.getInt(ResourceDataKeys.KEY_DEX_REQUIREMENT);
+        dIntelligenceRequired = weaponData.getInt(ResourceDataKeys.KEY_INT_REQUIREMENT);
+        dFaithRequired = weaponData.getInt(ResourceDataKeys.KEY_FAITH_REQUIREMENT);
         fStrengthScaling = weaponData.getDouble(ResourceDataKeys.KEY_STRENGTH_SCALING);
         fDexterityScaling = weaponData.getDouble(ResourceDataKeys.KEY_DEXTERITY_SCALING);
         fIntelligenceScaling = weaponData.getDouble(ResourceDataKeys.KEY_INTELLIGENCE_SCALING);

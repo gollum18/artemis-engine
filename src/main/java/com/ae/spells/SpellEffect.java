@@ -18,5 +18,6 @@ public enum SpellEffect {
     BUFF_STAMINA,
     DEBUFF_HP,
     DEBUFF_STAMINA,
-    CLEANSE
+    CLEANSE,
+    BUFF_WEAPON
 }

@@ -9,5 +9,6 @@ package com.ae.spells;
 public enum SpellType {
     INT,
     FAITH,
+    FIRE,
     NECROTIC
 }

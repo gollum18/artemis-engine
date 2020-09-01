@@ -20,7 +20,6 @@ public class SpellFlyweight extends Flyweight {
     private final SpellTarget mTarget;
     private final SpellType mType;
     private final int dDuration;
-    private final int dDamage;
     private final int dRange;
     private final int dFalloff;
     private final int dAreaOfEffect;
@@ -28,6 +27,16 @@ public class SpellFlyweight extends Flyweight {
     private final int dSlotsRequired;
     private final int dIntRequired;
     private final int dFaithRequired;
+    private final int dMagicDamage;
+    private final int dFireDamage;
+    private final int dNecroDamage;
+    private final int dMagicResist;
+    private final int dFireResist;
+    private final int dNecroResist;
+    private final int dHealAmt;
+    private final int dBleedBuildup;
+    private final int dPoisonBuildup;
+    private final int dStunBuildup;
     private final String sDescription;
 
     /**
@@ -47,14 +56,23 @@ public class SpellFlyweight extends Flyweight {
         mTarget = SpellTarget.valueOf(spellData.getString(ResourceDataKeys.KEY_TARGET));
         mType = SpellType.valueOf(spellData.getString(ResourceDataKeys.KEY_TYPE));
         dDuration = spellData.getInt(ResourceDataKeys.KEY_DURATION);
-        dDamage = spellData.getInt(ResourceDataKeys.KEY_DAMAGE);
         dRange = spellData.getInt(ResourceDataKeys.KEY_RANGE);
         dFalloff = spellData.getInt(ResourceDataKeys.KEY_FALLOFF);
         dAreaOfEffect = spellData.getInt(ResourceDataKeys.KEY_AOE);
         dMaxCharges = spellData.getInt(ResourceDataKeys.KEY_MAX_CHARGES);
         dSlotsRequired = spellData.getInt(ResourceDataKeys.KEY_SLOTS_REQUIRED);
-        dIntRequired = spellData.getInt(ResourceDataKeys.KEY_INT_REQUIRED);
-        dFaithRequired = spellData.getInt(ResourceDataKeys.KEY_FAITH_REQUIRED);
+        dIntRequired = spellData.getInt(ResourceDataKeys.KEY_INT_REQUIREMENT);
+        dFaithRequired = spellData.getInt(ResourceDataKeys.KEY_FAITH_REQUIREMENT);
+        dMagicDamage = spellData.getInt(ResourceDataKeys.KEY_MAGIC_DAMAGE);
+        dFireDamage = spellData.getInt(ResourceDataKeys.KEY_FIRE_DAMAGE);
+        dNecroDamage = spellData.getInt(ResourceDataKeys.KEY_NECRO_DAMAGE);
+        dMagicResist = spellData.getInt(ResourceDataKeys.KEY_MAGIC_RESIST);
+        dFireResist = spellData.getInt(ResourceDataKeys.KEY_FIRE_RESIST);
+        dNecroResist = spellData.getInt(ResourceDataKeys.KEY_NECRO_RESIST);
+        dHealAmt = spellData.getInt(ResourceDataKeys.KEY_HEAL_AMOUNT);
+        dBleedBuildup = spellData.getInt(ResourceDataKeys.KEY_BLEED_BUILDUP);
+        dPoisonBuildup = spellData.getInt(ResourceDataKeys.KEY_POISON_BUILDUP);
+        dStunBuildup = spellData.getInt(ResourceDataKeys.KEY_STUN_BUILDUP);
         sDescription = spellData.getString(ResourceDataKeys.KEY_DESCRIPTION);
         mEffects = new HashSet<>(4);
         for (Object o : spellData.getJSONArray(ResourceDataKeys.KEY_EFFECTS)) {
@@ -99,12 +117,6 @@ public class SpellFlyweight extends Flyweight {
      * @return The number of turns a SpellEffect is active for.
      */
     public int getDuration() { return dDuration; }
-
-    /**
-     * Returns the damage inflicted by the Spell represented by the flyweight.
-     * @return The damage inflicted by the Spell.
-     */
-    public int getDamage() { return dDamage; }
 
     /**
      * Returns the range of the Spell represented by the flyweight. Casters of the Spell can not cast the Spell
@@ -155,6 +167,66 @@ public class SpellFlyweight extends Flyweight {
     public int getFaithRequired() { return dFaithRequired; }
 
     /**
+     *
+     * @return
+     */
+    public int getMagicDamage() { return dMagicDamage; }
+
+    /**
+     *
+     * @return
+     */
+    public int getFireDamage() { return dFireDamage; }
+
+    /**
+     *
+     * @return
+     */
+    public int getNecroDamage() { return dNecroDamage; }
+
+    /**
+     *
+     * @return
+     */
+    public int getMagicResist() { return dMagicResist; }
+
+    /**
+     *
+     * @return
+     */
+    public int getFireResist() { return dFireResist; }
+
+    /**
+     *
+     * @return
+     */
+    public int getNecroResist() { return dNecroResist; }
+
+    /**
+     *
+     * @return
+     */
+    public int getHealAmount() { return dHealAmt; }
+
+    /**
+     *
+     * @return
+     */
+    public int getBleedBuildup() { return dBleedBuildup; }
+
+    /**
+     *
+     * @return
+     */
+    public int getPoisonBuildup() { return dPoisonBuildup; }
+
+    /**
+     *
+     * @return
+     */
+    public int getStunBuildup() { return dStunBuildup; }
+
+    /**
      * Returns the description of the Spell represented by the flyweight.
      * @return The description of the SpellFlyweight.
      */
@@ -163,7 +235,6 @@ public class SpellFlyweight extends Flyweight {
     @Override public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("Name: ").append(sName).append("\n");
-        sb.append("Damage: ").append(dDamage).append("\n");
         sb.append("Range: ").append(dRange).append("\n");
         sb.append("Falloff: ").append(dFalloff).append("\n");
         sb.append("Area of Effect: ").append(dAreaOfEffect).append("\n");

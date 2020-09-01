@@ -20,9 +20,9 @@ public class ResourceDataKeys {
     public static final String KEY_MAGIC_RESIST = "magic-resist";
     public static final String KEY_FIRE_RESIST = "fire-resist";
     public static final String KEY_NECRO_RESIST = "necro-resist";
-    public static final String KEY_STRENGTH_REQUIREMENT = "str-requirement";
-    public static final String KEY_DEXTERITY_REQUIREMENT = "dex-requirement";
-    public static final String KEY_INTELLIGENCE_REQUIREMENT = "int-requirement";
+    public static final String KEY_STR_REQUIREMENT = "str-requirement";
+    public static final String KEY_DEX_REQUIREMENT = "dex-requirement";
+    public static final String KEY_INT_REQUIREMENT = "int-requirement";
     public static final String KEY_FAITH_REQUIREMENT = "faith-requirement";
     public static final String KEY_EFFECTS = "effects";
     public static final String KEY_TYPE = "spell-type";
@@ -34,8 +34,6 @@ public class ResourceDataKeys {
     public static final String KEY_TARGET = "target";
     public static final String KEY_MAX_CHARGES = "max-charges";
     public static final String KEY_SLOTS_REQUIRED = "slots-required";
-    public static final String KEY_INT_REQUIRED = "int-required";
-    public static final String KEY_FAITH_REQUIRED = "faith-required";
     public static final String KEY_SLOTS = "slots";
     public static final String KEY_BLEED_BUILDUP = "bleed-buildup";
     public static final String KEY_POISON_BUILDUP = "poison-buildup";
@@ -43,6 +41,7 @@ public class ResourceDataKeys {
     public static final String KEY_MAGIC_DAMAGE = "magic-damage";
     public static final String KEY_FIRE_DAMAGE = "fire-damage";
     public static final String KEY_NECRO_DAMAGE = "necro-damage";
+    public static final String KEY_HEAL_AMOUNT = "heal-amount";
     public static final String KEY_STRENGTH_SCALING = "str-scaling";
     public static final String KEY_DEXTERITY_SCALING = "dex-scaling";
     public static final String KEY_INTELLIGENCE_SCALING = "int-scaling";
