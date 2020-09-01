@@ -1,5 +1,7 @@
 package com.ae.actors.humans;
 
+import com.ae.util.flyweights.NPCFlyweight;
+
 public class NPC extends Human {
     private final NPCFlyweight mFlyweight;
     

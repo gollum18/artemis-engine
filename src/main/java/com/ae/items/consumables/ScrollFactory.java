@@ -2,6 +2,7 @@ package com.ae.items.consumables;
 
 import com.ae.resources.ResourceLoader;
 import com.ae.resources.ResourceType;
+import com.ae.util.flyweights.ScrollFlyweight;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -20,7 +21,7 @@ public class ScrollFactory {
         for (Object object : scrollData) {
             JSONObject scrollDatum = (JSONObject) object;
             ScrollFlyweight flyweight = new ScrollFlyweight(scrollDatum);
-            mFlyweights.put(flyweight.getId(), flyweight);
+            mFlyweights.put(flyweight.dId, flyweight);
         }
     }
 

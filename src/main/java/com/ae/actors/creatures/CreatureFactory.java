@@ -2,6 +2,7 @@ package com.ae.actors.creatures;
 
 import com.ae.resources.ResourceLoader;
 import com.ae.resources.ResourceType;
+import com.ae.util.flyweights.CreatureFlyweight;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -16,7 +17,7 @@ public class CreatureFactory {
         for (Object object : creatureData) {
             JSONObject creatureDatum = (JSONObject) object;
             CreatureFlyweight flyweight = new CreatureFlyweight(creatureDatum);
-            mFlyweights.put(flyweight.getId(), flyweight);
+            mFlyweights.put(flyweight.dId, flyweight);
         }
     }
 

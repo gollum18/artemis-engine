@@ -2,6 +2,7 @@ package com.ae.items.weapons;
 
 import com.ae.resources.ResourceLoader;
 import com.ae.resources.ResourceType;
+import com.ae.util.flyweights.SpellbookFlyweight;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -24,7 +25,7 @@ public class SpellbookFactory {
         for (Object object : spellbookData) {
             JSONObject spellbookDatum = (JSONObject) object;
             SpellbookFlyweight flyweight = new SpellbookFlyweight(spellbookDatum);
-            mFlyweights.put(flyweight.getId(), flyweight);
+            mFlyweights.put(flyweight.dId, flyweight);
         }
     }
 

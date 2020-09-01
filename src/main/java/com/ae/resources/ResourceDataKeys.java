@@ -8,9 +8,10 @@ public class ResourceDataKeys {
     public static final String KEY_PROGRESSION_TYPE = "progression-type";
     public static final String KEY_DROP_TABLE = "drop-table";
     public static final String KEY_DESCRIPTION = "description";
-    public static final String KEY_CLASS = "armor-class";
+    public static final String KEY_ARMOR_CLASS = "armor-class";
     public static final String KEY_WEIGHT = "weight";
-    public static final String KEY_SLOT = "armor-slot";
+    public static final String KEY_ARMOR_SLOT = "armor-slot";
+    public static final String KEY_WEAPON_SLOT = "weapon-slot";
     public static final String KEY_RARITY = "rarity";
     public static final String KEY_DURABILITY = "durability";
     public static final String KEY_DEFENSE = "defense";

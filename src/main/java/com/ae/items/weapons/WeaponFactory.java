@@ -3,6 +3,7 @@ package com.ae.items.weapons;
 import com.ae.resources.ResourceLoader;
 import com.ae.resources.ResourceType;
 import com.ae.util.flyweights.FlyweightIterator;
+import com.ae.util.flyweights.WeaponFlyweight;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -19,7 +20,7 @@ public class WeaponFactory {
         for (Object weaponDatum : weaponData) {
             JSONObject object = (JSONObject) weaponDatum;
             WeaponFlyweight flyweight = new WeaponFlyweight(object);
-            mFlyweights.put(flyweight.getId(), flyweight);
+            mFlyweights.put(flyweight.dId, flyweight);
         }
     }
 
@@ -43,7 +44,7 @@ public class WeaponFactory {
     public Iterator<WeaponFlyweight> getFlyweightsBySlot(WeaponSlot slot) {
         ArrayList<WeaponFlyweight> flyweights = new ArrayList<>();
         for (WeaponFlyweight fw : mFlyweights.values()) {
-            if (fw.getWeaponSlot() == slot) {
+            if (fw.mWeaponSlot == slot) {
                 flyweights.add(fw);
             }
         }

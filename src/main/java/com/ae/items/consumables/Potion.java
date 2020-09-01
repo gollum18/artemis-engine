@@ -1,5 +1,7 @@
 package com.ae.items.consumables;
 
+import com.ae.util.flyweights.PotionFlyweight;
+
 public class Potion extends Consumable {
     private final PotionFlyweight mFlyweight;
 

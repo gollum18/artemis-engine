@@ -2,6 +2,7 @@ package com.ae.actors.humans;
 
 import com.ae.resources.ResourceLoader;
 import com.ae.resources.ResourceType;
+import com.ae.util.flyweights.NPCFlyweight;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -23,7 +24,7 @@ public class NPCFactory {
         for (Object object : npcData) {
             JSONObject npcDatum = (JSONObject) object;
             NPCFlyweight flyweight = new NPCFlyweight(npcDatum);
-            mFlyweights.put(flyweight.getId(), flyweight);
+            mFlyweights.put(flyweight.dId, flyweight);
         }
     }
 

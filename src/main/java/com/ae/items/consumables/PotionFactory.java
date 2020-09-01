@@ -2,6 +2,7 @@ package com.ae.items.consumables;
 
 import com.ae.resources.ResourceLoader;
 import com.ae.resources.ResourceType;
+import com.ae.util.flyweights.PotionFlyweight;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -23,7 +24,7 @@ public class PotionFactory {
         for (Object object : potionData) {
             JSONObject potionDatum = (JSONObject) object;
             PotionFlyweight flyweight = new PotionFlyweight(potionDatum);
-            mFlyweights.put(flyweight.getId(), flyweight);
+            mFlyweights.put(flyweight.dId, flyweight);
         }
     }
 

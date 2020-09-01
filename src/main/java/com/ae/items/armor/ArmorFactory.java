@@ -2,6 +2,7 @@ package com.ae.items.armor;
 
 import com.ae.resources.ResourceLoader;
 import com.ae.resources.ResourceType;
+import com.ae.util.flyweights.ArmorFlyweight;
 import com.ae.util.flyweights.FlyweightIterator;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -30,7 +31,7 @@ public class ArmorFactory {
         for (Object armorDatum : armorData) {
             JSONObject object = (JSONObject) armorDatum;
             ArmorFlyweight flyweight = new ArmorFlyweight(object);
-            mFlyweights.put(flyweight.getId(), flyweight);
+            mFlyweights.put(flyweight.dId, flyweight);
         }
     }
 
@@ -75,7 +76,7 @@ public class ArmorFactory {
     public Iterator<ArmorFlyweight> getFlyweightsByClass(ArmorClass armorClass) {
         ArrayList<ArmorFlyweight> collection = new ArrayList<>();
         for (ArmorFlyweight fw : mFlyweights.values()) {
-            if (fw.getArmorClass() == armorClass) {
+            if (fw.mArmorClass == armorClass) {
                 collection.add(fw);
             }
         }
@@ -85,7 +86,7 @@ public class ArmorFactory {
     public Iterator<ArmorFlyweight> getFlyweightsBySlot(ArmorSlot slot) {
         ArrayList<ArmorFlyweight> collection = new ArrayList<>();
         for (ArmorFlyweight fw : mFlyweights.values()) {
-            if (fw.getArmorSlot() == slot) {
+            if (fw.mArmorSlot == slot) {
                 collection.add(fw);
             }
         }
