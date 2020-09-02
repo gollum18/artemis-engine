@@ -2,23 +2,18 @@ package com.ae.items.weapons;
 
 import com.ae.resources.ResourceLoader;
 import com.ae.resources.ResourceType;
+import com.ae.spells.SpellFlyweight;
+import com.ae.util.Factory;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.HashMap;
 
-/**
- *
- */
-public class SpellbookFactory {
+public class SpellbookFactory implements Factory {
 
     private static SpellbookFactory mInstance;
     private final HashMap<Integer, SpellbookFlyweight> mFlyweights;
 
-    /**
-     *
-     * @param spellbookData
-     */
     private SpellbookFactory(JSONArray spellbookData) {
         mFlyweights = new HashMap<>();
         for (Object object : spellbookData) {
@@ -28,10 +23,6 @@ public class SpellbookFactory {
         }
     }
 
-    /**
-     *
-     * @return
-     */
     public static SpellbookFactory getInstance() {
         if (mInstance == null) {
             JSONArray spellbookData = (JSONArray)ResourceLoader.loadResource(ResourceType.ST_SPELLBOOKS);
@@ -40,18 +31,22 @@ public class SpellbookFactory {
         return mInstance;
     }
 
-    /**
-     *
-     * @param id
-     * @return
-     */
-    public Spellbook buildSpellbook(int id) {
+    public SpellbookFlyweight getFlyweightById(int id) {
         if (!mFlyweights.containsKey(id)) {
             throw new IllegalArgumentException(
                 "Error: Cannot instantiate Spellbook. Invalid Spellbook ID specified."
             );
         }
-        SpellbookFlyweight flyweight = mFlyweights.get(id);
-        return new Spellbook(flyweight);
+        return mFlyweights.get(id);
+    }
+
+    public Spellbook build(int id) {
+        SpellbookFlyweight fw = getFlyweightById(id);
+        return new Spellbook(fw);
+    }
+
+    public Spellbook build(int id, JSONObject stateData) {
+        SpellbookFlyweight fw = getFlyweightById(id);
+        return new Spellbook(fw, stateData);
     }
 }

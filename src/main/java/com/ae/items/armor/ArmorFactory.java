@@ -2,24 +2,18 @@ package com.ae.items.armor;
 
 import com.ae.resources.ResourceLoader;
 import com.ae.resources.ResourceType;
+import com.ae.util.Factory;
 import com.ae.util.FlyweightIterator;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.*;
 
-/**
- *
- */
-public class ArmorFactory {
+public class ArmorFactory implements Factory {
 
     private static ArmorFactory mInstance;
     private final HashMap<Integer, ArmorFlyweight> mFlyweights;
 
-    /**
-     *
-     * @param armorData
-     */
     private ArmorFactory(JSONArray armorData) {
         if (armorData == null) {
             throw new IllegalArgumentException(
@@ -34,10 +28,6 @@ public class ArmorFactory {
         }
     }
 
-    /**
-     *
-     * @return
-     */
     public static ArmorFactory getInstance() {
         if (mInstance == null) {
             JSONArray armorData = (JSONArray) ResourceLoader.loadResource(ResourceType.ST_ARMOR);
@@ -46,32 +36,27 @@ public class ArmorFactory {
         return mInstance;
     }
 
-    /**
-     *
-     * @param id
-     * @return
-     */
-    public Armor buildArmor(Integer id) {
+    public ArmorFlyweight getFlyweightById(int id) {
         if (!mFlyweights.containsKey(id)) {
             throw new IllegalArgumentException(
                 "Error: Cannot instantiate Armor. Invalid Armor ID specified."
             );
         }
-        ArmorFlyweight flyweight = mFlyweights.get(id);
+        return mFlyweights.get(id);
+    }
+
+    public Armor build(int id) {
+        ArmorFlyweight flyweight = getFlyweightById(id);
         return new Armor(flyweight);
     }
 
-    /**
-     *
-     * @return
-     */
+    public Armor build(int id, JSONObject stateData) {
+        ArmorFlyweight flyweight = getFlyweightById(id);
+        return new Armor(flyweight, stateData);
+    }
+
     public Set<Integer> armorKeys() { return mFlyweights.keySet(); }
 
-    /**
-     *
-     * @param armorClass
-     * @return
-     */
     public Iterator<ArmorFlyweight> getFlyweightsByClass(ArmorClass armorClass) {
         ArrayList<ArmorFlyweight> collection = new ArrayList<>();
         for (ArmorFlyweight fw : mFlyweights.values()) {

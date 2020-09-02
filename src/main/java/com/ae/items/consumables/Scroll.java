@@ -1,11 +1,11 @@
 package com.ae.items.consumables;
 
-public class Scroll extends Consumable {
-    private final ScrollFlyweight mFlyweight;
+import org.json.JSONObject;
 
-    public Scroll(ScrollFlyweight flyweight) {
-        mFlyweight = flyweight;
+public class Scroll extends Consumable {
+    public Scroll(ScrollFlyweight fw) {
+        super(fw);
     }
 
-    public ScrollFlyweight getFlyweight() { return mFlyweight; }
+    public Scroll(ScrollFlyweight fw, JSONObject stateData) { super(fw, stateData); }
 }

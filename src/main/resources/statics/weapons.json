@@ -6,6 +6,7 @@
     "rarity": "",
     "damage": 0,
     "weight": 0,
+    "range": 0,
     "durability": 0,
     "bleed-buildup": 0,
     "poison-buildup": 0,

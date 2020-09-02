@@ -1,16 +1,12 @@
 package com.ae.items.weapons;
 
 import com.ae.items.Wearable;
+import org.json.JSONObject;
 
-/**
- *
- */
 public class Spellbook extends Wearable {
-    private final SpellbookFlyweight mFlyweight;
-
-    public Spellbook(SpellbookFlyweight flyweight) {
-        mFlyweight = flyweight;
+    public Spellbook(SpellbookFlyweight fw) {
+        super(fw);
     }
 
-    public SpellbookFlyweight getFlyweight() { return mFlyweight; }
+    public Spellbook(SpellbookFlyweight fw, JSONObject stateData) { super(fw, stateData); }
 }

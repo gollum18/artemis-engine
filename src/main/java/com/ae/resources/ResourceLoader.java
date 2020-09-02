@@ -92,6 +92,12 @@ public class ResourceLoader {
                     filepath = Objects.requireNonNull(
                         loader.getResource(ResourcePaths.ST_FACTIONS_PATH)
                     ).getFile();
+                    break;
+                case ST_ATTACKS:
+                    filepath = Objects.requireNonNull(
+                            loader.getResource(ResourcePaths.ST_ATTACKS_PATH)
+                    ).getFile();
+                    break;
             }
         } catch (ClassNotFoundException | NullPointerException ex) {
             ex.printStackTrace(System.err);

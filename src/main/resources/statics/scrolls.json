@@ -1,6 +1,8 @@
 [
   {
     "id": 0,
-    "name": ""
+    "name": "",
+    "max-charges": 0,
+    "spell-id": 0
   }
 ]

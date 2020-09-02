@@ -4,11 +4,9 @@ import com.ae.resources.ResourceDataKeys;
 import com.ae.items.WearableFlyweight;
 import org.json.JSONObject;
 
-/**
- *
- */
 public class WeaponFlyweight extends WearableFlyweight {
     public final int dDamage;
+    public final int dRange;
     public final int dBleedBuildup;
     public final int dPoisonBuildup;
     public final int dStunBuildup;
@@ -21,13 +19,10 @@ public class WeaponFlyweight extends WearableFlyweight {
     public final double fFaithScaling;
     public final WeaponSlot mWeaponSlot;
 
-    /**
-     *
-     * @param weaponData
-     */
     public WeaponFlyweight(JSONObject weaponData) {
         super(weaponData);
         dDamage = weaponData.getInt(ResourceDataKeys.KEY_DAMAGE);
+        dRange = weaponData.getInt(ResourceDataKeys.KEY_RANGE);
         dBleedBuildup = weaponData.getInt(ResourceDataKeys.KEY_BLEED_BUILDUP);
         dPoisonBuildup = weaponData.getInt(ResourceDataKeys.KEY_POISON_BUILDUP);
         dStunBuildup = weaponData.getInt(ResourceDataKeys.KEY_STUN_BUILDUP);

@@ -2,12 +2,13 @@ package com.ae.actors.creatures;
 
 import com.ae.resources.ResourceLoader;
 import com.ae.resources.ResourceType;
+import com.ae.util.Factory;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.HashMap;
 
-public class CreatureFactory {
+public class CreatureFactory implements Factory {
     private static CreatureFactory mInstance;
     private final HashMap<Integer, CreatureFlyweight> mFlyweights;
 
@@ -29,13 +30,22 @@ public class CreatureFactory {
         return mInstance;
     }
 
-    public Creature buildCreature(int id) {
+    public CreatureFlyweight getFlyweightById(int id) {
         if (!mFlyweights.containsKey(id)) {
             throw new IllegalArgumentException(
                 "Error: Cannot instantiate Creature. Invalid Creature ID specified!"
             );
         }
-        CreatureFlyweight flyweight = mFlyweights.get(id);
-        return new Creature(flyweight);
+        return mFlyweights.get(id);
+    }
+
+    public Creature build(int id) {
+        CreatureFlyweight fw = getFlyweightById(id);
+        return new Creature(fw);
+    }
+
+    public Creature build(int id, JSONObject stateData) {
+        CreatureFlyweight fw = getFlyweightById(id);
+        return new Creature(fw, stateData);
     }
 }

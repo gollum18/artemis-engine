@@ -2,22 +2,16 @@ package com.ae.items.consumables;
 
 import com.ae.resources.ResourceLoader;
 import com.ae.resources.ResourceType;
+import com.ae.util.Factory;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.HashMap;
 
-/**
- *
- */
-public class PotionFactory {
+public class PotionFactory implements Factory {
     private static PotionFactory mInstance;
     private final HashMap<Integer, PotionFlyweight> mFlyweights;
 
-    /**
-     *
-     * @param potionData
-     */
     private PotionFactory(JSONArray potionData) {
         mFlyweights = new HashMap<>();
         for (Object object : potionData) {
@@ -27,10 +21,6 @@ public class PotionFactory {
         }
     }
 
-    /**
-     *
-     * @return
-     */
     public static PotionFactory getInstance() {
         if (mInstance == null) {
             JSONArray potionData = (JSONArray) ResourceLoader.loadResource(ResourceType.ST_POTIONS);
@@ -39,18 +29,22 @@ public class PotionFactory {
         return mInstance;
     }
 
-    /**
-     *
-     * @param id
-     * @return
-     */
-    public Potion buildPotion(int id) {
+    public PotionFlyweight getFlyweightById(int id) {
         if (!mFlyweights.containsKey(id)) {
             throw new IllegalArgumentException(
                 "Error: Cannot instantiate Potion. Invalid Potion ID specified."
             );
         }
-        PotionFlyweight flyweight = mFlyweights.get(id);
-        return new Potion(flyweight);
+        return mFlyweights.get(id);
+    }
+
+    public Potion build(int id) {
+        PotionFlyweight fw = getFlyweightById(id);
+        return new Potion(fw);
+    }
+
+    public Potion build(int id, JSONObject stateData) {
+        PotionFlyweight fw = getFlyweightById(id);
+        return new Potion(fw, stateData);
     }
 }

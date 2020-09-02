@@ -1,0 +1,14 @@
+[
+  {
+    "id": 0,
+    "damage": 0,
+    "range": 0,
+    "bleed-buildup": 0,
+    "poison-buildup": 0,
+    "stun-buildup": 0,
+    "magic-damage": 0,
+    "fire-damage": 0,
+    "necro-damage": 0,
+    "stamina-cost": 0
+  }
+]

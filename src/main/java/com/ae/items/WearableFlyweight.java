@@ -5,9 +5,7 @@ import com.ae.resources.ResourceDataKeys;
 import com.ae.util.Flyweight;
 import org.json.JSONObject;
 
-public abstract class WearableFlyweight extends Flyweight {
-    public final ItemRarity mRarity;
-    public final int dWeight;
+public abstract class WearableFlyweight extends ItemFlyweight {
     public final int dDurability;
     public final int dStrengthRequirement;
     public final int dDexterityRequirement;
@@ -16,8 +14,6 @@ public abstract class WearableFlyweight extends Flyweight {
 
     public WearableFlyweight(JSONObject wearableData) {
         super(wearableData);
-        mRarity = ItemRarity.valueOf(wearableData.getString(ResourceDataKeys.KEY_RARITY));
-        dWeight = wearableData.getInt(ResourceDataKeys.KEY_WEIGHT);
         dDurability = wearableData.getInt(ResourceDataKeys.KEY_DURABILITY);
         dStrengthRequirement = wearableData.getInt(ResourceDataKeys.KEY_STR_REQUIREMENT);
         dDexterityRequirement = wearableData.getInt(ResourceDataKeys.KEY_DEX_REQUIREMENT);

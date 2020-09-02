@@ -1,15 +1,14 @@
 package com.ae.items.armor;
 
 import com.ae.items.Wearable;
+import org.json.JSONObject;
 
 public class Armor extends Wearable {
-
-    private final ArmorFlyweight mFlyweight;
-
-    public Armor(ArmorFlyweight flyweight) {
-        mFlyweight = flyweight;
+    public Armor(ArmorFlyweight fw) {
+        super(fw);
     }
 
-    public ArmorFlyweight getFlyweight() { return mFlyweight; }
-
+    public Armor(ArmorFlyweight fw, JSONObject stateData) {
+        super(fw, stateData);
+    }
 }

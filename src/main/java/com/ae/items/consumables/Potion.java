@@ -1,11 +1,11 @@
 package com.ae.items.consumables;
 
-public class Potion extends Consumable {
-    private final PotionFlyweight mFlyweight;
+import org.json.JSONObject;
 
-    public Potion(PotionFlyweight flyweight) {
-        mFlyweight = flyweight;
+public class Potion extends Consumable {
+    public Potion(PotionFlyweight fw) {
+        super(fw);
     }
 
-    public PotionFlyweight getFlyweight() { return mFlyweight; }
+    public Potion(PotionFlyweight fw, JSONObject stateData) { super(fw, stateData); }
 }

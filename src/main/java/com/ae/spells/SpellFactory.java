@@ -3,13 +3,14 @@ package com.ae.spells;
 import com.ae.resources.ResourceDataKeys;
 import com.ae.resources.ResourceLoader;
 import com.ae.resources.ResourceType;
+import com.ae.util.Factory;
 import com.ae.util.FlyweightIterator;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.*;
 
-public class SpellFactory {
+public class SpellFactory implements Factory {
     private static SpellFactory mInstance;
     private final HashMap<Integer, SpellFlyweight> mFlyweights;
 
@@ -38,14 +39,23 @@ public class SpellFactory {
         return mInstance;
     }
 
-    public Spell buildSpell(int id) {
+    public SpellFlyweight getFlyweightById(int id) {
         if (!mFlyweights.containsKey(id)) {
             throw new IllegalArgumentException(
                 "Error: Cannot instantiate spell. Invalid spell ID specified."
             );
         }
-        SpellFlyweight fw = mFlyweights.get(id);
+        return mFlyweights.get(id);
+    }
+
+    public Spell build(int id) {
+        SpellFlyweight fw = getFlyweightById(id);
         return new Spell(fw);
+    }
+
+    public Spell build(int id, JSONObject stateData) {
+        SpellFlyweight fw = getFlyweightById(id);
+        return new Spell(fw, stateData);
     }
 
     public Set<Integer> getSpellIds() { return mFlyweights.keySet(); }

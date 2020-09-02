@@ -2,6 +2,7 @@ package com.ae.items.weapons;
 
 import com.ae.resources.ResourceLoader;
 import com.ae.resources.ResourceType;
+import com.ae.util.Factory;
 import com.ae.util.FlyweightIterator;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -10,7 +11,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 
-public class WeaponFactory {
+public class WeaponFactory implements Factory {
     private static WeaponFactory mInstance;
     private final HashMap<Integer, WeaponFlyweight> mFlyweights;
 
@@ -30,14 +31,23 @@ public class WeaponFactory {
         } return mInstance;
     }
 
-    public Weapon buildWeapon(int id) {
+    public WeaponFlyweight getFlyweightById(int id) {
         if (!mFlyweights.containsKey(id)) {
             throw new IllegalArgumentException(
                 "Error: Cannot instantiate Weapon. Invalid Weapon ID specified."
             );
         }
-        WeaponFlyweight flyweight = mFlyweights.get(id);
-        return new Weapon(flyweight);
+        return mFlyweights.get(id);
+    }
+
+    public Weapon build(int id) {
+        WeaponFlyweight fw = getFlyweightById(id);
+        return new Weapon(fw);
+    }
+
+    public Weapon build(int id, JSONObject stateData) {
+        WeaponFlyweight fw = getFlyweightById(id);
+        return new Weapon(fw, stateData);
     }
 
     public Iterator<WeaponFlyweight> getFlyweightsBySlot(WeaponSlot slot) {

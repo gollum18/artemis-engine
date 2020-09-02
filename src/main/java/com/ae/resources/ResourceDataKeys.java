@@ -3,7 +3,6 @@ package com.ae.resources;
 public class ResourceDataKeys {
     public static final String KEY_ID = "id";
     public static final String KEY_NAME = "name";
-    public static final String KEY_FACTION = "faction";
     public static final String KEY_COMBAT_TYPE = "combat-type";
     public static final String KEY_PROGRESSION_TYPE = "progression-type";
     public static final String KEY_DROP_TABLE = "drop-table";
@@ -48,4 +47,7 @@ public class ResourceDataKeys {
     public static final String KEY_DEXTERITY_SCALING = "dex-scaling";
     public static final String KEY_INTELLIGENCE_SCALING = "int-scaling";
     public static final String KEY_FAITH_SCALING = "faith-scaling";
+    public static final String KEY_HITPOINTS = "hitpoints";
+    public static final String KEY_STAMINA = "stamina";
+    public static final String KEY_STAMINA_COST = "stamina-cost";
 }
