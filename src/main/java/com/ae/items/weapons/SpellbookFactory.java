@@ -2,7 +2,6 @@ package com.ae.items.weapons;
 
 import com.ae.resources.ResourceLoader;
 import com.ae.resources.ResourceType;
-import com.ae.util.flyweights.SpellbookFlyweight;
 import org.json.JSONArray;
 import org.json.JSONObject;
 

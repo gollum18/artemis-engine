@@ -9,4 +9,9 @@ package com.ae.spells;
  * @author Christen Ford
  * @since 08/28/2020
  */
-public enum SpellTarget { SELF, TARGET, HOP, AREA }
+public enum SpellTarget {
+    SELF,
+    TARGET,
+    HOP,
+    AREA
+}

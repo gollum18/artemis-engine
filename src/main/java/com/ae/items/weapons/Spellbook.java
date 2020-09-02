@@ -1,7 +1,6 @@
 package com.ae.items.weapons;
 
 import com.ae.items.Wearable;
-import com.ae.util.flyweights.SpellbookFlyweight;
 
 /**
  *
