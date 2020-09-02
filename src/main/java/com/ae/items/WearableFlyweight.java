@@ -1,7 +1,8 @@
-package com.ae.util.flyweights;
+package com.ae.items;
 
 import com.ae.items.ItemRarity;
 import com.ae.resources.ResourceDataKeys;
+import com.ae.util.Flyweight;
 import org.json.JSONObject;
 
 public abstract class WearableFlyweight extends Flyweight {

@@ -1,4 +1,4 @@
-package com.ae.util.flyweights;
+package com.ae.util;
 
 import com.ae.resources.ResourceDataKeys;
 import org.json.JSONObject;

@@ -1,7 +1,7 @@
-package com.ae.util.flyweights;
+package com.ae.items.weapons;
 
-import com.ae.items.weapons.WeaponSlot;
 import com.ae.resources.ResourceDataKeys;
+import com.ae.items.WearableFlyweight;
 import org.json.JSONObject;
 
 /**

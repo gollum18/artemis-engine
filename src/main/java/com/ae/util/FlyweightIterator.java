@@ -1,4 +1,6 @@
-package com.ae.util.flyweights;
+package com.ae.util;
+
+import com.ae.util.Flyweight;
 
 import java.util.Iterator;
 import java.util.List;

@@ -1,11 +1,12 @@
-package com.ae.util.flyweights;
+package com.ae.actors.humans;
 
+import com.ae.actors.ActorFlyweight;
 import com.ae.agents.CombatType;
 import com.ae.agents.ProgressionType;
 import com.ae.resources.ResourceDataKeys;
 import org.json.JSONObject;
 
-public class NPCFlyweight extends Flyweight {
+public class NPCFlyweight extends ActorFlyweight {
     public final int dFactionId;
     public final int dDropTableId;
     public final CombatType mCombatType;

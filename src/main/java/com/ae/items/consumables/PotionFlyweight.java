@@ -1,5 +1,6 @@
-package com.ae.util.flyweights;
+package com.ae.items.consumables;
 
+import com.ae.items.consumables.ConsumableFlyweight;
 import org.json.JSONObject;
 
 public class PotionFlyweight extends ConsumableFlyweight {
