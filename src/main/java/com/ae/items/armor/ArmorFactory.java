@@ -2,8 +2,7 @@ package com.ae.items.armor;
 
 import com.ae.resources.ResourceLoader;
 import com.ae.resources.ResourceType;
-import com.ae.util.flyweights.ArmorFlyweight;
-import com.ae.util.flyweights.FlyweightIterator;
+import com.ae.util.FlyweightIterator;
 import org.json.JSONArray;
 import org.json.JSONObject;
 

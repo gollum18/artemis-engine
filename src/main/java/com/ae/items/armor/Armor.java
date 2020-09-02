@@ -1,7 +1,6 @@
 package com.ae.items.armor;
 
 import com.ae.items.Wearable;
-import com.ae.util.flyweights.ArmorFlyweight;
 
 public class Armor extends Wearable {
 

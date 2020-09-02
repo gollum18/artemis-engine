@@ -26,7 +26,8 @@ public class ResourceDataKeys {
     public static final String KEY_INT_REQUIREMENT = "int-requirement";
     public static final String KEY_FAITH_REQUIREMENT = "faith-requirement";
     public static final String KEY_EFFECTS = "effects";
-    public static final String KEY_TYPE = "spell-type";
+    public static final String KEY_SPELL_TYPE = "spell-type";
+    public static final String KEY_MAGIC_TYPE = "magic-type";
     public static final String KEY_DURATION = "duration";
     public static final String KEY_DAMAGE = "damage";
     public static final String KEY_RANGE = "range";

@@ -2,7 +2,6 @@ package com.ae.actors.humans;
 
 import com.ae.resources.ResourceLoader;
 import com.ae.resources.ResourceType;
-import com.ae.util.flyweights.NPCFlyweight;
 import org.json.JSONArray;
 import org.json.JSONObject;
 

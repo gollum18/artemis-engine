@@ -1,10 +1,7 @@
 package com.ae.tests;
 
-import com.ae.spells.Spell;
 import com.ae.spells.SpellFactory;
 import org.junit.*;
-
-import java.util.LinkedList;
 
 public class TestSpells {
 
@@ -12,11 +9,9 @@ public class TestSpells {
 
     @Test
     public void testSpellBuilding() {
-        LinkedList<Spell> spells = new LinkedList<>();
-        for (Integer key : factory.spellKeys()) {
-            spells.add(factory.buildSpell(key));
+        for (int id : factory.getSpellIds()) {
+            System.out.println(factory.buildSpell(id));
         }
-        Assert.assertEquals(factory.spellKeys().size(), spells.size());
     }
 
 }

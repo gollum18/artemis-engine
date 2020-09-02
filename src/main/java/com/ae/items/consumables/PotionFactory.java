@@ -2,7 +2,6 @@ package com.ae.items.consumables;
 
 import com.ae.resources.ResourceLoader;
 import com.ae.resources.ResourceType;
-import com.ae.util.flyweights.PotionFlyweight;
 import org.json.JSONArray;
 import org.json.JSONObject;
 

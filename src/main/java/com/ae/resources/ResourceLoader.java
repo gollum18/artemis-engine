@@ -7,6 +7,7 @@ import org.json.JSONTokener;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.util.Objects;
 
 /**
  * This class is responsible for loading in resources from disk when requested.
@@ -28,43 +29,69 @@ public class ResourceLoader {
             ClassLoader loader = loaderClass.getClassLoader();
             switch (resourceType) {
                 case RS_COMBAT:
-                    filepath = loader.getResource(ResourcePaths.RS_COMBAT_PATH).getFile();
+                    filepath = Objects.requireNonNull(
+                        loader.getResource(ResourcePaths.RS_COMBAT_PATH)
+                    ).getFile();
                     break;
                 case RS_DUNGEONS:
-                    filepath = loader.getResource(ResourcePaths.RS_DUNGEONS_PATH).getFile();
+                    filepath = Objects.requireNonNull(
+                        loader.getResource(ResourcePaths.RS_DUNGEONS_PATH)
+                    ).getFile();
                     break;
                 case RS_OVERWORLD:
-                    filepath = loader.getResource(ResourcePaths.RS_OVERWORLD_PATH).getFile();
+                    filepath = Objects.requireNonNull(
+                        loader.getResource(ResourcePaths.RS_OVERWORLD_PATH)
+                    ).getFile();
                     break;
                 case RS_SAFEZONES:
-                    filepath = loader.getResource(ResourcePaths.RS_SAFEZONES_PATH).getFile();
+                    filepath = Objects.requireNonNull(
+                        loader.getResource(ResourcePaths.RS_SAFEZONES_PATH)
+                    ).getFile();
                     break;
                 case ST_CREATURES:
-                    filepath = loader.getResource(ResourcePaths.ST_CREATURES_PATH).getFile();
+                    filepath = Objects.requireNonNull(
+                        loader.getResource(ResourcePaths.ST_CREATURES_PATH)
+                    ).getFile();
                     break;
                 case ST_NPCS:
-                    filepath = loader.getResource(ResourcePaths.ST_NPCS_PATH).getFile();
+                    filepath = Objects.requireNonNull(
+                        loader.getResource(ResourcePaths.ST_NPCS_PATH)
+                    ).getFile();
                     break;
                 case ST_SPELLS:
-                    filepath = loader.getResource(ResourcePaths.ST_SPELLS_PATH).getFile();
+                    filepath = Objects.requireNonNull(
+                        loader.getResource(ResourcePaths.ST_SPELLS_PATH)
+                    ).getFile();
                     break;
                 case ST_SPELLBOOKS:
-                    filepath = loader.getResource(ResourcePaths.ST_SPELLBOOKS_PATH).getFile();
+                    filepath = Objects.requireNonNull(
+                        loader.getResource(ResourcePaths.ST_SPELLBOOKS_PATH)
+                    ).getFile();
                     break;
                 case ST_ARMOR:
-                    filepath = loader.getResource(ResourcePaths.ST_ARMOR_PATH).getFile();
+                    filepath = Objects.requireNonNull(
+                        loader.getResource(ResourcePaths.ST_ARMOR_PATH)
+                    ).getFile();
                     break;
                 case ST_WEAPONS:
-                    filepath = loader.getResource(ResourcePaths.ST_WEAPONS_PATH).getFile();
+                    filepath = Objects.requireNonNull(
+                        loader.getResource(ResourcePaths.ST_WEAPONS_PATH)
+                    ).getFile();
                     break;
                 case ST_POTIONS:
-                    filepath = loader.getResource(ResourcePaths.ST_POTIONS_PATH).getFile();
+                    filepath = Objects.requireNonNull(
+                        loader.getResource(ResourcePaths.ST_POTIONS_PATH)
+                    ).getFile();
                     break;
                 case ST_SCROLLS:
-                    filepath = loader.getResource(ResourcePaths.ST_SCROLLS_PATH).getFile();
+                    filepath = Objects.requireNonNull(
+                        loader.getResource(ResourcePaths.ST_SCROLLS_PATH)
+                    ).getFile();
                     break;
                 case ST_FACTIONS:
-                    filepath = loader.getResource(ResourcePaths.ST_FACTIONS_PATH).getFile();
+                    filepath = Objects.requireNonNull(
+                        loader.getResource(ResourcePaths.ST_FACTIONS_PATH)
+                    ).getFile();
             }
         } catch (ClassNotFoundException | NullPointerException ex) {
             ex.printStackTrace(System.err);
