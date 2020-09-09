@@ -61,6 +61,6 @@ public class BoundingBox {
         // TODO: Incorporate epsilon as well
         // Note that this will increase the number of checks to 8 as we need to do +-
         //  for all 4 original checks
-        return (x >= bx-bw && x <= bw+bw && y >= by-bl && y <= by+bl);
+        return (x >= bx-bw && x <= bx+bw && y >= by-bl && y <= by+bl);
     }
 }
