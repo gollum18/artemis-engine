@@ -4,13 +4,18 @@ import com.ae.resources.ResourceDataKeys;
 import com.ae.util.Flyweight;
 import org.json.JSONObject;
 
-public class ActorFlyweight extends Flyweight {
-    public final int dHitpoints;
-    public final int dStamina;
+public abstract class ActorFlyweight extends Flyweight {
+    public final int dMaxHitpoints;
+    public final int dMaxStamina;
+    public final int dXpOnKill;
+    public final int dLevel;
 
     public ActorFlyweight(JSONObject actorData) {
         super(actorData);
-        dHitpoints = actorData.getInt(ResourceDataKeys.KEY_HITPOINTS);
-        dStamina = actorData.getInt(ResourceDataKeys.KEY_STAMINA);
+        // TODO: Most of these statistics need to scale with character level/game stage
+        dMaxHitpoints = actorData.getInt(ResourceDataKeys.KEY_MAX_HITPOINTS);
+        dMaxStamina = actorData.getInt(ResourceDataKeys.KEY_MAX_STAMINA);
+        dXpOnKill = actorData.getInt(ResourceDataKeys.KEY_XP_ON_KILL);
+        dLevel = actorData.getInt(ResourceDataKeys.KEY_BASE_LEVEL);
     }
 }

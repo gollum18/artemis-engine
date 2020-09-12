@@ -11,4 +11,6 @@ public class Armor extends Wearable {
     public Armor(ArmorFlyweight fw, JSONObject stateData) {
         super(fw, stateData);
     }
+
+    public ArmorFlyweight getFlyweight() { return (ArmorFlyweight) mFlyweight; }
 }

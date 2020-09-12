@@ -2,8 +2,8 @@
   {
     "id": 0,
     "name": "",
-    "hitpoints": 0,
-    "stamina":0,
+    "max-hitpoints": 0,
+    "max-stamina":0,
     "defense": 0,
     "bleed-resist": 0,
     "poison-resist": 0,
@@ -11,6 +11,7 @@
     "magic-resist": 0,
     "fire-resist": 0,
     "necro-resist": 0,
+    "stamina-recovery": 0,
     "drop-table": [
       {
         "id": 0,

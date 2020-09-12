@@ -1,4 +1,4 @@
-package com.ae.actors.creatures;
+package com.ae.actors;
 
 import com.ae.resources.ResourceLoader;
 import com.ae.resources.ResourceType;
@@ -21,31 +21,43 @@ public class CreatureFactory implements Factory {
         }
     }
 
-    public static CreatureFactory getInstance() {
+    public CreatureFactory getInstance() {
         if (mInstance == null) {
-           JSONArray creatureData =
-                   (JSONArray) ResourceLoader.loadResource(ResourceType.ST_CREATURES);
-           mInstance = new CreatureFactory(creatureData);
+            JSONArray creatureData = (JSONArray) ResourceLoader.loadResource(ResourceType.ST_CREATURES);
+            mInstance = new CreatureFactory(creatureData);
         }
         return mInstance;
     }
 
+    @Override
     public CreatureFlyweight getFlyweightById(int id) {
         if (!mFlyweights.containsKey(id)) {
             throw new IllegalArgumentException(
-                "Error: Cannot instantiate Creature. Invalid Creature ID specified!"
+                ""
             );
         }
         return mFlyweights.get(id);
     }
 
+    @Override
     public Creature build(int id) {
-        CreatureFlyweight fw = getFlyweightById(id);
-        return new Creature(fw);
+        if (!mFlyweights.containsKey(id)) {
+            throw new IllegalArgumentException(
+                ""
+            );
+        }
+        CreatureFlyweight flyweight = mFlyweights.get(id);
+        return new Creature(flyweight);
     }
 
-    public Creature build(int id, JSONObject stateData) {
-        CreatureFlyweight fw = getFlyweightById(id);
-        return new Creature(fw, stateData);
+    @Override
+    public Creature build(int id, JSONObject save) {
+        if (!mFlyweights.containsKey(id)) {
+            throw new IllegalArgumentException(
+                ""
+            );
+        }
+        CreatureFlyweight flyweight = mFlyweights.get(id);
+        return new Creature(flyweight, save);
     }
 }
