@@ -9,4 +9,6 @@ public class Spellbook extends Wearable {
     }
 
     public Spellbook(SpellbookFlyweight fw, JSONObject stateData) { super(fw, stateData); }
+
+    public SpellbookFlyweight getFlyweight() { return (SpellbookFlyweight) mFlyweight; }
 }

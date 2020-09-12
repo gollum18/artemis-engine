@@ -1,4 +1,4 @@
-package com.ae.actors.humans;
+package com.ae.actors;
 
 import com.ae.resources.ResourceLoader;
 import com.ae.resources.ResourceType;
@@ -23,28 +23,41 @@ public class NPCFactory implements Factory {
 
     public static NPCFactory getInstance() {
         if (mInstance == null) {
-            JSONArray npcData = (JSONArray) ResourceLoader.loadResource(ResourceType.ST_NPCS);
+            JSONArray npcData = (JSONArray) ResourceLoader.loadResource(ResourceType.ST_CHARACTERS);
             mInstance = new NPCFactory(npcData);
         }
         return mInstance;
     }
 
+    @Override
     public NPCFlyweight getFlyweightById(int id) {
         if (!mFlyweights.containsKey(id)) {
             throw new IllegalArgumentException(
-                "Error: Cannot instantiate NPC. Invalid NPC ID specified."
+                ""
             );
         }
         return mFlyweights.get(id);
     }
 
+    @Override
     public NPC build(int id) {
-        NPCFlyweight fw = getFlyweightById(id);
-        return new NPC(fw);
+        if (!mFlyweights.containsKey(id)) {
+            throw new IllegalArgumentException(
+                ""
+            );
+        }
+        NPCFlyweight flyweight = mFlyweights.get(id);
+        return new NPC(flyweight);
     }
 
-    public NPC build(int id, JSONObject stateData) {
-        NPCFlyweight fw = getFlyweightById(id);
-        return new NPC(fw, stateData);
+    @Override
+    public NPC build(int id, JSONObject save) {
+        if (!mFlyweights.containsKey(id)) {
+            throw new IllegalArgumentException(
+                ""
+            );
+        }
+        NPCFlyweight flyweight = mFlyweights.get(id);
+        return new NPC(flyweight, save);
     }
 }

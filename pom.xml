@@ -9,7 +9,7 @@
         <maven.compiler.target>1.11</maven.compiler.target>
     </properties>
 
-    <groupId>groupId</groupId>
+    <groupId>com.ae.artemis-engine</groupId>
     <artifactId>artemis-engine</artifactId>
     <version>1.0-SNAPSHOT</version>
     <build>
@@ -29,6 +29,7 @@
             <groupId>org.json</groupId>
             <artifactId>json</artifactId>
             <version>20200518</version>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 

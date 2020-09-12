@@ -3,8 +3,6 @@ package com.ae.resources;
 public class ResourceDataKeys {
     public static final String KEY_ID = "id";
     public static final String KEY_NAME = "name";
-    public static final String KEY_COMBAT_TYPE = "combat-type";
-    public static final String KEY_PROGRESSION_TYPE = "progression-type";
     public static final String KEY_DROP_TABLE = "drop-table";
     public static final String KEY_DESCRIPTION = "description";
     public static final String KEY_ARMOR_CLASS = "armor-class";
@@ -13,6 +11,7 @@ public class ResourceDataKeys {
     public static final String KEY_WEAPON_SLOT = "weapon-slot";
     public static final String KEY_RARITY = "rarity";
     public static final String KEY_DURABILITY = "durability";
+    public static final String KEY_MAX_DURABILITY = "max-durability";
     public static final String KEY_DEFENSE = "defense";
     public static final String KEY_BLEED_RESIST = "bleed-resist";
     public static final String KEY_POISON_RESIST = "poison-resist";
@@ -49,5 +48,14 @@ public class ResourceDataKeys {
     public static final String KEY_FAITH_SCALING = "faith-scaling";
     public static final String KEY_HITPOINTS = "hitpoints";
     public static final String KEY_STAMINA = "stamina";
+    public static final String KEY_MAX_HITPOINTS = "max-hitpoints";
+    public static final String KEY_MAX_STAMINA = "max-stamina";
     public static final String KEY_STAMINA_COST = "stamina-cost";
+    public static final String KEY_STAMINA_RECOVERY = "stamina-recovery";
+    public static final String KEY_POS_X = "x-pos";
+    public static final String KEY_POS_Y = "y-pos";
+    public static final String KEY_BOUNDING_LENGTH_RADIUS = "bounding-length-radius";
+    public static final String KEY_BOUNDING_WIDTH_RADIUS = "bounding-width-radius";
+    public static final String KEY_XP_ON_KILL = "xp-on-kill";
+    public static final String KEY_BASE_LEVEL = "base-level";
 }

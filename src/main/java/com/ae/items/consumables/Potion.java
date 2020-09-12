@@ -8,4 +8,6 @@ public class Potion extends Consumable {
     }
 
     public Potion(PotionFlyweight fw, JSONObject stateData) { super(fw, stateData); }
+
+    public PotionFlyweight getFlyweight() { return (PotionFlyweight) mFlyweight; }
 }

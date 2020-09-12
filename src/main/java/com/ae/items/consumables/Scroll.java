@@ -8,4 +8,6 @@ public class Scroll extends Consumable {
     }
 
     public Scroll(ScrollFlyweight fw, JSONObject stateData) { super(fw, stateData); }
+
+    public ScrollFlyweight getFlyweight() { return (ScrollFlyweight) mFlyweight; }
 }

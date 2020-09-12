@@ -59,6 +59,8 @@ public class SpellFlyweight extends Flyweight {
     @Override public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("Name: ").append(sName).append("\n");
+        sb.append("Magic Type: ").append(mMagicType).append("\n");
+        sb.append("Spell Type: ").append(mSpellType).append("\n");
         sb.append("Range: ").append(dRange).append("\n");
         sb.append("Falloff: ").append(dFalloff).append("\n");
         sb.append("Area of Effect: ").append(dAreaOfEffect).append("\n");

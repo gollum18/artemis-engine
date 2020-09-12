@@ -6,7 +6,7 @@ import com.ae.util.Flyweight;
 import org.json.JSONObject;
 
 public abstract class WearableFlyweight extends ItemFlyweight {
-    public final int dDurability;
+    public final int dMaxDurability;
     public final int dStrengthRequirement;
     public final int dDexterityRequirement;
     public final int dIntelligenceRequirement;
@@ -14,7 +14,7 @@ public abstract class WearableFlyweight extends ItemFlyweight {
 
     public WearableFlyweight(JSONObject wearableData) {
         super(wearableData);
-        dDurability = wearableData.getInt(ResourceDataKeys.KEY_DURABILITY);
+        dMaxDurability = wearableData.getInt(ResourceDataKeys.KEY_MAX_DURABILITY);
         dStrengthRequirement = wearableData.getInt(ResourceDataKeys.KEY_STR_REQUIREMENT);
         dDexterityRequirement = wearableData.getInt(ResourceDataKeys.KEY_DEX_REQUIREMENT);
         dIntelligenceRequirement = wearableData.getInt(ResourceDataKeys.KEY_INT_REQUIREMENT);

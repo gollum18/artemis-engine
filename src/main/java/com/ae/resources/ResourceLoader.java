@@ -53,9 +53,9 @@ public class ResourceLoader {
                         loader.getResource(ResourcePaths.ST_CREATURES_PATH)
                     ).getFile();
                     break;
-                case ST_NPCS:
+                case ST_CHARACTERS:
                     filepath = Objects.requireNonNull(
-                        loader.getResource(ResourcePaths.ST_NPCS_PATH)
+                        loader.getResource(ResourcePaths.ST_CHARACTERS_PATH)
                     ).getFile();
                     break;
                 case ST_SPELLS:

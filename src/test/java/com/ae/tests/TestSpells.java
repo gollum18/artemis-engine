@@ -10,7 +10,7 @@ public class TestSpells {
     @Test
     public void testSpellBuilding() {
         for (int id : factory.getSpellIds()) {
-            System.out.println(factory.buildSpell(id));
+            System.out.println(factory.build(id));
         }
     }
 

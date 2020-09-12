@@ -11,4 +11,6 @@ public class Weapon extends Wearable {
     public Weapon(WeaponFlyweight fw, JSONObject stateData) {
         super(fw, stateData);
     }
+
+    public WeaponFlyweight getFlyweight() { return (WeaponFlyweight) mFlyweight; }
 }

@@ -3,7 +3,7 @@ package com.ae.spells;
 import org.json.JSONObject;
 
 public class Spell {
-    public final SpellFlyweight mFlyweight;
+    protected final SpellFlyweight mFlyweight;
 
     public Spell(SpellFlyweight fw) {
         mFlyweight = fw;
@@ -12,6 +12,8 @@ public class Spell {
     public Spell(SpellFlyweight fw, JSONObject stateData) {
         mFlyweight = fw;
     }
+
+    public SpellFlyweight getFlyweight() { return (SpellFlyweight) mFlyweight; }
 
     @Override public String toString() {
         StringBuilder sb = new StringBuilder();

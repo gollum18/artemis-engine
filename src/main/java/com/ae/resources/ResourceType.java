@@ -16,7 +16,7 @@ public enum ResourceType {
     RS_OVERWORLD,
     RS_SAFEZONES,
     ST_CREATURES,
-    ST_NPCS,
+    ST_CHARACTERS,
     ST_SPELLS,
     ST_SPELLBOOKS,
     ST_ARMOR,
