@@ -8,16 +8,16 @@ import org.json.JSONObject;
 
 import java.util.HashMap;
 
-public class CreatureFactory implements Factory {
+public class CreatureFactory implements Factory<CreatureFlyweight, Creature> {
     private static CreatureFactory mInstance;
-    private final HashMap<Integer, CreatureFlyweight> mFlyweights;
+    private final HashMap<Integer, CreatureFlyweight> mBaseFlyweights;
 
     private CreatureFactory(JSONArray creatureData) {
-        mFlyweights = new HashMap<>();
+        mBaseFlyweights = new HashMap<>();
         for (Object object : creatureData) {
             JSONObject creatureDatum = (JSONObject) object;
             CreatureFlyweight flyweight = new CreatureFlyweight(creatureDatum);
-            mFlyweights.put(flyweight.dId, flyweight);
+            mBaseFlyweights.put(flyweight.dId, flyweight);
         }
     }
 
@@ -31,33 +31,34 @@ public class CreatureFactory implements Factory {
 
     @Override
     public CreatureFlyweight getFlyweightById(int id) {
-        if (!mFlyweights.containsKey(id)) {
+        if (!mBaseFlyweights.containsKey(id)) {
             throw new IllegalArgumentException(
                 ""
             );
         }
-        return mFlyweights.get(id);
+        return mBaseFlyweights.get(id);
     }
 
     @Override
     public Creature build(int id) {
-        if (!mFlyweights.containsKey(id)) {
+        if (!mBaseFlyweights.containsKey(id)) {
             throw new IllegalArgumentException(
                 ""
             );
         }
-        CreatureFlyweight flyweight = mFlyweights.get(id);
+        CreatureFlyweight flyweight = mBaseFlyweights.get(id);
         return new Creature(flyweight);
     }
 
     @Override
+    public Creature build(int id, int gs) {
+        // TODO: Implement me
+        return null;
+    }
+
+    @Override
     public Creature build(int id, JSONObject save) {
-        if (!mFlyweights.containsKey(id)) {
-            throw new IllegalArgumentException(
-                ""
-            );
-        }
-        CreatureFlyweight flyweight = mFlyweights.get(id);
-        return new Creature(flyweight, save);
+        // TODO: Implement me
+        return null;
     }
 }

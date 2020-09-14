@@ -8,7 +8,7 @@ import org.json.JSONObject;
 
 import java.util.HashMap;
 
-public class ScrollFactory implements Factory {
+public class ScrollFactory implements Factory<ScrollFlyweight, Scroll> {
     private static ScrollFactory mInstance;
     private final HashMap<Integer, ScrollFlyweight> mFlyweights;
 
@@ -41,6 +41,11 @@ public class ScrollFactory implements Factory {
     public Scroll build(int id) {
         ScrollFlyweight fw = getFlyweightById(id);
         return new Scroll(fw);
+    }
+
+    public Scroll build(int id, int gs) {
+        // TODO: Implement me
+        return null;
     }
 
     public Scroll build(int id, JSONObject stateData) {

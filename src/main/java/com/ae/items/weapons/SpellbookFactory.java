@@ -1,5 +1,6 @@
 package com.ae.items.weapons;
 
+import com.ae.items.armor.Armor;
 import com.ae.resources.ResourceLoader;
 import com.ae.resources.ResourceType;
 import com.ae.spells.SpellFlyweight;
@@ -43,6 +44,11 @@ public class SpellbookFactory implements Factory {
     public Spellbook build(int id) {
         SpellbookFlyweight fw = getFlyweightById(id);
         return new Spellbook(fw);
+    }
+
+    public Spellbook build(int id, int gs) {
+        // TODO: Implement me
+        return null;
     }
 
     public Spellbook build(int id, JSONObject stateData) {

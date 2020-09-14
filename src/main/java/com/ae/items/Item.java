@@ -1,13 +1,16 @@
 package com.ae.items;
 
+import com.ae.util.Entity;
 import org.json.JSONObject;
 
-public abstract class Item {
-    protected final ItemFlyweight mFlyweight;
+public abstract class Item extends Entity {
 
-    public Item(ItemFlyweight fw) { mFlyweight = fw; }
+    public Item(ItemFlyweight fw) {
+        super(fw);
+    }
 
     public Item(ItemFlyweight fw, JSONObject stateData) {
-        this(fw);
+        super(fw, stateData);
     }
+
 }

@@ -1,5 +1,6 @@
 package com.ae.items.consumables;
 
+import com.ae.items.armor.Armor;
 import com.ae.resources.ResourceLoader;
 import com.ae.resources.ResourceType;
 import com.ae.util.Factory;
@@ -8,7 +9,7 @@ import org.json.JSONObject;
 
 import java.util.HashMap;
 
-public class PotionFactory implements Factory {
+public class PotionFactory implements Factory<PotionFlyweight, Potion> {
     private static PotionFactory mInstance;
     private final HashMap<Integer, PotionFlyweight> mFlyweights;
 
@@ -41,6 +42,11 @@ public class PotionFactory implements Factory {
     public Potion build(int id) {
         PotionFlyweight fw = getFlyweightById(id);
         return new Potion(fw);
+    }
+
+    public Potion build(int id, int gs) {
+        // TODO: Implement me
+        return null;
     }
 
     public Potion build(int id, JSONObject stateData) {

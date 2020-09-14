@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 
-public class WeaponFactory implements Factory {
+public class WeaponFactory implements Factory<WeaponFlyweight, Weapon> {
     private static WeaponFactory mInstance;
     private final HashMap<Integer, WeaponFlyweight> mFlyweights;
 
@@ -43,6 +43,11 @@ public class WeaponFactory implements Factory {
     public Weapon build(int id) {
         WeaponFlyweight fw = getFlyweightById(id);
         return new Weapon(fw);
+    }
+
+    public Weapon build(int id, int gs) {
+        // TODO: Implement me
+        return null;
     }
 
     public Weapon build(int id, JSONObject stateData) {

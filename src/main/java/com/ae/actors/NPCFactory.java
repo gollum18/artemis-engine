@@ -8,7 +8,7 @@ import org.json.JSONObject;
 
 import java.util.HashMap;
 
-public class NPCFactory implements Factory {
+public class NPCFactory implements Factory<NPCFlyweight, NPC> {
     private static NPCFactory mInstance;
     private final HashMap<Integer, NPCFlyweight> mFlyweights;
 
@@ -48,6 +48,11 @@ public class NPCFactory implements Factory {
         }
         NPCFlyweight flyweight = mFlyweights.get(id);
         return new NPC(flyweight);
+    }
+
+    public NPC build(int id, int gs) {
+        // TODO: Implement me
+        return null;
     }
 
     @Override

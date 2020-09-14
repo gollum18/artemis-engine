@@ -1,19 +1,18 @@
 package com.ae.spells;
 
+import com.ae.util.Entity;
 import org.json.JSONObject;
 
-public class Spell {
-    protected final SpellFlyweight mFlyweight;
-
+public class Spell extends Entity {
     public Spell(SpellFlyweight fw) {
-        mFlyweight = fw;
+        super(fw);
     }
 
     public Spell(SpellFlyweight fw, JSONObject stateData) {
-        mFlyweight = fw;
+        super(fw, stateData);
     }
 
-    public SpellFlyweight getFlyweight() { return (SpellFlyweight) mFlyweight; }
+    public SpellFlyweight getFlyweight() { return (SpellFlyweight) super.getFlyweight(); }
 
     @Override public String toString() {
         StringBuilder sb = new StringBuilder();

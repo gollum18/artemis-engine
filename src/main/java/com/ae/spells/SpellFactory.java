@@ -10,7 +10,7 @@ import org.json.JSONObject;
 
 import java.util.*;
 
-public class SpellFactory implements Factory {
+public class SpellFactory implements Factory<SpellFlyweight, Spell> {
     private static SpellFactory mInstance;
     private final HashMap<Integer, SpellFlyweight> mFlyweights;
 
@@ -51,6 +51,11 @@ public class SpellFactory implements Factory {
     public Spell build(int id) {
         SpellFlyweight fw = getFlyweightById(id);
         return new Spell(fw);
+    }
+
+    public Spell build(int id, int gs) {
+        // TODO: Implement me
+        return null;
     }
 
     public Spell build(int id, JSONObject stateData) {
