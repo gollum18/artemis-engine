@@ -1,4 +1,14 @@
 package com.ae.actors;
 
-public abstract class Actor {
+import com.ae.util.Entity;
+import org.json.JSONObject;
+
+public abstract class Actor extends Entity {
+    public Actor(ActorFlyweight fw) {
+        super(fw);
+    }
+
+    public Actor(ActorFlyweight fw, JSONObject stateData) {
+        super(fw, stateData);
+    }
 }
